@@ -1,7 +1,6 @@
 # Django Hybrid Property
 
 ## TODO: 
-- pypi
 - travis
 - codecov
 
@@ -95,17 +94,19 @@ Klass.objects.filter(Child.my_hybrid_property.t('children') < 'value')
 
 - Raw expressions (for you to use it whatever you want) via `.e()` attribute. Examples:
 ```python
-    Klass.objects.annotate(my_method_result=Klass.my_hybrid_method().e())
+Klass.objects.annotate(my_method_result=Klass.my_hybrid_method().e())
 ```
 
 - Custom alias via `.a()` attribute (so you can reference the annotated expression later on). Examples:
 ```python
-    Klass.objects.filter(Klass.my_hybrid_property.a('_expr_alias') > 'value').order_by('_expr_alias')
+Klass.objects.filter(Klass.my_hybrid_property.a('_expr_alias') > 'value').order_by('_expr_alias')
 ```
 
 - Test/script helper to ensure hybrid expressions are sane compared to its properties/methods. Examples:
 ```python
 from django_hybrid_attributes.test_utils import assert_hybrid_attributes_are_consistent, HybridTestCaseMixin
+
+
 class MyTestCase(HybridTestCaseMixin, YourBaseTestcase):
     def test_expressions_are_sane(self):
         self.assertHybridAttributesAreConsistent(Klass.my_hybrid_property)
@@ -132,17 +133,17 @@ class MyTestCase(HybridTestCaseMixin, YourBaseTestcase):
 A: You don't need this project. And you could use this approach.
 That being said, I still see some reasons to use this project, such as:
 - Cleaner and more concise code;
-- Support for relations via `.t()/through`;
+- Support for relations via `.t()/.through()`;
 - Better code placement (method and its expression lives alongside each other, instead of spread over 2 different files (models.py and managers.py))
 
 ### Q: Why is this `.t()` needed? Couldn't I use `through` parameter directly?
 A: You could do that for hybrid_methods (and you can, nothing stops you from doing this). However, this wouldn't work for hybrid_properties for obvious reasons. =P
 
 ### Q: SQLAlchemy creates automatically the `.expression` function for the simplest cases. Does this project do it as well?
-A: No, I didn't find a decent (meaning:non-smelly) way of doing this using Django structure (yet). Suggestions are welcome.
+A: No, I didn't find a decent (meaning: non-smelly) way of doing this using Django structure (yet). Suggestions are welcome.
 
-### Q: Why do you abbreviate the code?
-A: I don't like code abbreviations either. However, Django querysets are rather way too long which makes them hard to read anyway. This is an attempt to make it a bit shorter.
+### Q: Why is there that amount of abbreviations in the code?
+A: I don't like code abbreviations either. However, Django querysets are rather way too long which makes them hard to read anyway. This is an attempt to make them a bit shorter.
 Still, if you don't buy it, you can use the non-abbreviated aliases:
 - `.a()` --> `.alias()`
 - `.e()` --> `.expression()`
