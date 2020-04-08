@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.com/filwaitman/django-hybrid-attributes.svg?branch=master)](https://travis-ci.com/filwaitman/django-hybrid-attributes)
+[![codecov](https://codecov.io/gh/filwaitman/django-hybrid-attributes/branch/master/graph/badge.svg)](https://codecov.io/gh/filwaitman/django-hybrid-attributes)
+
 # Django Hybrid Property
 
 This is a (pretty basic) implementation of the [SQLAlchemy Hybrid Attributes](https://docs.sqlalchemy.org/en/13/orm/extensions/hybrid.html) for Django - more precisely `hybrid_property` and `hybrid_method`.
