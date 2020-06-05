@@ -1,5 +1,10 @@
-[![Build Status](https://travis-ci.com/filwaitman/django-hybrid-attributes.svg?branch=master)](https://travis-ci.com/filwaitman/django-hybrid-attributes)
-[![codecov](https://codecov.io/gh/filwaitman/django-hybrid-attributes/branch/master/graph/badge.svg)](https://codecov.io/gh/filwaitman/django-hybrid-attributes)
+[![Travis](https://travis-ci.com/filwaitman/django-hybrid-attributes.svg?branch=master)](https://travis-ci.com/filwaitman/django-hybrid-attributes)
+[![Codecov](https://codecov.io/gh/filwaitman/django-hybrid-attributes/branch/master/graph/badge.svg)](https://codecov.io/gh/filwaitman/django-hybrid-attributes)
+[![PyPI](https://img.shields.io/pypi/v/django-hybrid-attributes.svg)](https://pypi.python.org/pypi/django-hybrid-attributes/)
+[![License](https://img.shields.io/pypi/l/django-hybrid-attributes.svg)](https://pypi.python.org/pypi/django-hybrid-attributes/)
+[![Python versions](https://img.shields.io/pypi/pyversions/django-hybrid-attributes.svg)](https://pypi.python.org/pypi/django-hybrid-attributes/)
+[![PyPI downloads per month](https://img.shields.io/pypi/dm/django-hybrid-attributes.svg)](https://pypi.python.org/pypi/django-hybrid-attributes/)
+
 
 # Django Hybrid Attributes
 
@@ -159,10 +164,10 @@ It means that if, for instance, an expression depends on a prior annotation, at 
 * There's no interface to call `.distinct()` for the expressions. So `Klass.my_property.t('this__duplicates__rows')` might return duplicated rows (specially on reverse relationships via `.t()`)
 
 
-## Contributing
+## Contributing:
 
-Please [open issues](https://github.com/filwaitman/django-hybrid-attributes/issues) if you see one, or [create a pull request](https://github.com/filwaitman/django-hybrid-attributes/pulls) when possible.  
+Please [open issues](https://github.com/filwaitman/django-hybrid-attributes/issues) if you see one, or [create a pull request](https://github.com/filwaitman/django-hybrid-attributes/pulls) when possible.
 In case of a pull request, please consider the following:
 - Respect the line length (132 characters)
-- Keep the great test coverage of this project
+- Write automated tests
 - Run `tox` locally so you can see if everything is green (including linter and other python versions)
